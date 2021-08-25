@@ -1,14 +1,12 @@
 import whisky from "../whisky.json";
 
-const whiskyItem = whisky[0];
-
 export default function Alcohol() {
-  return (
+  return whisky.map((item) => (
     <div>
-      <img src={whiskyItem.imgUrl} alt={whiskyItem.name}></img>
-      <h2>{whiskyItem.name}</h2>
-      <p>Litres: {whiskyItem.liters}</p>
-      <p>Price: {whiskyItem.price}</p>
+      <img src={item.imgUrl} alt={item.name}></img>
+      <h2>{item.name}</h2>
+      <p>Litres: {item.liters}</p>
+      <p>Price: {item.price}</p>
     </div>
-  );
+  ));
 }

@@ -1,9 +1,13 @@
-import Alcohol from "./components/Alcohol";
+import Alcohol from "./components/Alcohol/Alcohol";
+import Finder from "./components/Finder/Finder";
 
 export default function App() {
   return (
     <div>
-      <Alcohol />
+      <Finder />
+      <ul>
+        <Alcohol />
+      </ul>
     </div>
   );
 }

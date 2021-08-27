@@ -1,5 +1,6 @@
 [
     {
+        "id": "id-1",
         "name": "Jim Beam",
         "imgUrl": "https://s.wine.style/images_gen/240/2402/0_0_cat.jpg",
         "liters": "1",
@@ -7,12 +8,14 @@
 
     },
     {
+        "id": "id-2",
 "name": "Jack Daniels",
         "imgUrl": "https://s.wine.style/images_gen/266/2663/0_0_cat.jpg",
         "liters": "1",
         "price": "650"
     },
  {
+     "id": "id-3",
 "name": "Wild Turkey",
         "imgUrl": "https://s.wine.style/images_gen/232/23236/0_0_cat.jpg",
         "liters": "0.7",

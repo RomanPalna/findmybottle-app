@@ -1,6 +1,6 @@
-import Alcohol from './components/Alcohol/Alcohol';
+import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
-import Dropdown from './components/Dropdown/Dropdown';
+import Dropdown from './components/Dropdown';
 
 export default function App() {
   return (

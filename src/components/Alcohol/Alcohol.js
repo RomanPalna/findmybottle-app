@@ -9,12 +9,11 @@ export default function Alcohol({ items }) {
           <p>Litres: {liters}</p>
           <p>Price: {price}</p>
           <form>
-            <input type="number"></input>
+            <input type="number" className="Alcohol__input"></input>
             <button>Add to list</button>
           </form>
         </li>
       ))}
-      ;
     </ul>
   );
 }

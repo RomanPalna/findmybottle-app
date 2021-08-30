@@ -1,0 +1,12 @@
+.Alcohol__list {
+  width: 700px;
+}
+
+.Alcohol__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Alcohol__discription {
+  margin-right: 5px;
+}

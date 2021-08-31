@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import shortid from 'shortid';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
@@ -6,8 +7,14 @@ import Dropdown from './components/Dropdown';
 import AddList from './components/AddList';
 import whisky from './whisky.json';
 
+const findMyBottle = (bottles, bottle) => {
+  bottles.find(
+    item => item.bottleName.toLowerCase() === bottle.bottleName.toLowerCase(),
+  );
+};
+
 export default function App() {
-  const [bottles, setBottle] = useState(whisky);
+  const [bottles, setBottles] = useState(whisky);
   const [filter, setFilter] = useState('');
 
   //For Finder, filter
@@ -24,9 +31,13 @@ export default function App() {
   };
 
   const onSubmitHendler = (bottleName, litr, price) => {
-    console.log(bottleName);
-    console.log(litr);
-    console.log(price);
+    const bottle = {
+      id: shortid.generate(),
+      name: bottleName,
+      liters: litr,
+      price,
+    };
+    setBottles([...bottles, bottle]);
   };
 
   return (

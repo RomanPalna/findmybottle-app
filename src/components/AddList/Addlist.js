@@ -31,7 +31,7 @@ export default function AddList({ onSubmit }) {
   return (
     <form onSubmit={nandleSubmit}>
       <label>
-        Bottle Name
+        Назва пляшки
         <input
           name="name"
           type="text"

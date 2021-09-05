@@ -1,6 +1,19 @@
+import React, { useState } from 'react';
 import './Alcohol.css';
 
-export default function Alcohol({ items }) {
+export default function Alcohol({ items, onSubmit }) {
+  const [quantity, setQuantity] = useState(0);
+
+  const handleChangeBottles = e => {
+    setQuantity(e.currentTarget.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    onSubmit(quantity);
+    setQuantity('');
+  };
+
   return (
     <ul className="Alcohol__list">
       {items.map(({ id, name, liters, price }) => (
@@ -8,9 +21,14 @@ export default function Alcohol({ items }) {
           <p className="Alcohol__discription">{name}</p>
           <p>Litres: {liters}</p>
           <p>Price: {price}</p>
-          <form>
-            <input type="number" className="Alcohol__input"></input>
-            <button>Add to list</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="number"
+              value={quantity}
+              onChange={handleChangeBottles}
+              className="Alcohol__input"
+            ></input>
+            <button type="submit">Add to list</button>
           </form>
         </li>
       ))}

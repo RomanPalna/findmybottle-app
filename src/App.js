@@ -5,17 +5,31 @@ import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
 import Dropdown from './components/Dropdown';
 import AddList from './components/AddList';
+import BottleList from './components/BottleList';
 import whisky from './whisky.json';
 
-const findMyBottle = (bottles, bottle) => {
-  bottles.find(
-    item => item.bottleName.toLowerCase() === bottle.bottleName.toLowerCase(),
-  );
-};
+// const findMyBottle = (bottles, bottle) => {
+//   bottles.find(
+//     item => item.bottleName.toLowerCase() === bottle.bottleName.toLowerCase(),
+//   );
+// };
 
 export default function App() {
   const [bottles, setBottles] = useState(whisky);
   const [filter, setFilter] = useState('');
+  const [items, setItems] = useState([]);
+
+  const addBottle = (name, liters, price, quantity) => {
+    const bottle = {
+      id: shortid.generate(),
+      name,
+      liters,
+      price,
+      quantity,
+    };
+
+    setItems([...items, bottle]);
+  };
 
   //For Finder, filter
   const findBottle = e => {
@@ -44,8 +58,9 @@ export default function App() {
     <div>
       <Dropdown />
       <Finder value={filter} onChange={findBottle} />
-      <Alcohol items={showBottle()} />
+      <Alcohol items={showBottle()} onSubmit={addBottle} />
       <AddList onSubmit={onSubmitHendler} />
+      <BottleList items={items} />
     </div>
   );
 }

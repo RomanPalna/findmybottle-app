@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Alcohol.css';
 
 export default function Alcohol({ items, onSubmit }) {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState('');
 
   const handleChangeBottles = e => {
     setQuantity(e.currentTarget.value);

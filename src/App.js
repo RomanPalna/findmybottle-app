@@ -31,6 +31,11 @@ export default function App() {
     setItems([...items, bottle]);
   };
 
+  //remove
+  const bottleRemove = bottleId => {
+    setItems(items.filter(item => (item.id = !bottleId)));
+  };
+
   //For Finder, filter
   const findBottle = e => {
     setFilter(e.currentTarget.value);
@@ -60,7 +65,7 @@ export default function App() {
       <Finder value={filter} onChange={findBottle} />
       <Alcohol items={showBottle()} onSubmit={addBottle} />
       <AddList onSubmit={onSubmitHendler} />
-      <BottleList items={items} />
+      <BottleList items={items} onClick={bottleRemove} />
     </div>
   );
 }

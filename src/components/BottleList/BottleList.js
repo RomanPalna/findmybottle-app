@@ -1,4 +1,4 @@
-export default function BottleList({ items }) {
+export default function BottleList({ items, bottleRemove }) {
   return (
     <ul>
       {items.map(item => (
@@ -7,7 +7,9 @@ export default function BottleList({ items }) {
           <p>Litres: {item.liters} </p>
           <p>Price: {item.price} </p>
           <p>Quantity: {item.quantity} </p>
-          <button type="button">Remove</button>
+          <button type="button" onClick={bottleRemove}>
+            Remove
+          </button>
         </li>
       ))}
     </ul>

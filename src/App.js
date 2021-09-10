@@ -65,7 +65,7 @@ export default function App() {
       <Finder value={filter} onChange={findBottle} />
       <Alcohol items={showBottle()} onSubmit={addBottle} />
       <AddList onSubmit={onSubmitHendler} />
-      <BottleList items={items} onClick={bottleRemove} />
+      <BottleList items={items} onDelete={bottleRemove} />
     </div>
   );
 }

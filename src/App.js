@@ -40,6 +40,7 @@ export default function App() {
   const findBottle = e => {
     setFilter(e.currentTarget.value);
   };
+
   //For Alcohol,when searching
   const showBottle = () => {
     const normalizeName = filter.toLowerCase();

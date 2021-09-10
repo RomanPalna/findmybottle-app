@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import './Alcohol.css';
+import shotrid from 'shortid';
 
 export default function Alcohol({ items, onSubmit }) {
   const [quantity, setQuantity] = useState('');
 
   const handleChangeBottles = e => {
-    setQuantity(e.currentTarget.value);
+    e.preventDefault();
+    setQuantity(e.target.value);
+    console.log(e.target);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const { id, name, liters, price } = items;
-    onSubmit({ id, name, liters, price, quantity });
+    if (quantity < 1) {
+      return;
+    } else {
+      onSubmit({ id, name, liters, price, quantity });
+    }
+
     setQuantity('');
   };
-
-  console.log(quantity);
 
   return (
     <ul className="Alcohol__list">
@@ -25,13 +32,18 @@ export default function Alcohol({ items, onSubmit }) {
           <p>Litres: {liters}</p>
           <p>Price: {price}</p>
           <form onSubmit={handleSubmit}>
-            <input
-              type="number"
-              value={quantity}
-              onChange={handleChangeBottles}
-              className="Alcohol__input"
-            ></input>
-            <button type="submit">Add to list</button>
+            <label htmlFor={id}>
+              Кількість:
+              <input
+                id={id}
+                name="number"
+                type="number"
+                value={quantity}
+                onChange={handleChangeBottles}
+                className="Alcohol__input"
+              ></input>
+              <button type="submit">Add to list</button>
+            </label>
           </form>
         </li>
       ))}

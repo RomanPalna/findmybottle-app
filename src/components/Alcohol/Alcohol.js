@@ -10,9 +10,12 @@ export default function Alcohol({ items, onSubmit }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(quantity);
+    const { id, name, liters, price } = items;
+    onSubmit({ id, name, liters, price, quantity });
     setQuantity('');
   };
+
+  console.log(quantity);
 
   return (
     <ul className="Alcohol__list">

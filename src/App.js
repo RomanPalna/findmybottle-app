@@ -19,7 +19,7 @@ export default function App() {
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
 
-  const addBottle = (name, liters, price, quantity) => {
+  const addBottle = ({ name, liters, price, quantity }) => {
     const bottle = {
       id: shortid.generate(),
       name,
@@ -33,7 +33,7 @@ export default function App() {
 
   //remove
   const bottleRemove = bottleId => {
-    setItems(items.filter(item => (item.id = !bottleId)));
+    setItems(items.filter(item => item.id !== bottleId));
   };
 
   //For Finder, filter

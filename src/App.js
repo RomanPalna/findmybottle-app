@@ -19,9 +19,9 @@ export default function App() {
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
 
-  const addBottle = ({ name, liters, price, quantity }) => {
+  const addBottle = ({ id, name, liters, price, quantity }) => {
     const bottle = {
-      id: shortid.generate(),
+      id,
       name,
       liters,
       price,

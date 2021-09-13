@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import whisky from '../../whisky.json';
 
-export default function AlcoholInput({ items, onSubmit }) {
+export default function AlcoholInput({ items, onSubmit, bottleId }) {
   const [quantity, setQuantity] = useState('');
-  const [bottles, setBottles] = useState([]);
+  const [bottles, setBottles] = useState('');
 
   const handleChangeBottles = e => {
     setQuantity(e.currentTarget.value);
   };
 
-  const addBottle = quantity => {
-    const bottle = {
-      id: whisky.id,
-      name: whisky.name,
-      liters: whisky.liters,
-      price: whisky.price,
-      quantity,
-    };
-    setBottles(bottles.push(bottle));
-  };
+  const addBottle = whisky.filter(item => item.id === bottleId);
+
+  console.log(bottles);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,8 +19,8 @@ export default function AlcoholInput({ items, onSubmit }) {
     if (quantity < 1) {
       return;
     } else {
-      addBottle(quantity);
-      onSubmit([...bottles, ...items]);
+      setBottles([...addBottle, ...quantity]);
+      onSubmit([bottles, ...items]);
     }
 
     setQuantity('');

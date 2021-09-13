@@ -9,7 +9,7 @@ export default function Alcohol({ items, onSubmit }) {
           <p className="Alcohol__discription">{name}</p>
           <p>Litres: {liters}</p>
           <p>Price: {price}</p>
-          <AlcoholInput onSubmit={onSubmit} items={items} />
+          <AlcoholInput onSubmit={onSubmit} items={items} bottleId={id} />
         </li>
       ))}
     </ul>

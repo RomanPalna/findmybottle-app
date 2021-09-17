@@ -3,14 +3,16 @@ import whisky from '../../whisky.json';
 
 export default function AlcoholInput({ items, onSubmit, bottleId }) {
   const [quantity, setQuantity] = useState('');
-  const [bottles, setBottles] = useState('');
+  const [bottles, setBottles] = useState([]);
 
   const handleChangeBottles = e => {
     setQuantity(e.currentTarget.value);
   };
 
-  const addBottle = whisky.filter(item => item.id === bottleId);
-
+  const bottlesArray = bottleId => {
+    setBottles(whisky.filter(item => item.id === bottleId));
+  };
+  console.log(whisky[0].id);
   console.log(bottles);
 
   const handleSubmit = e => {
@@ -19,10 +21,10 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
     if (quantity < 1) {
       return;
     } else {
-      setBottles([...addBottle, ...quantity]);
-      onSubmit([bottles, ...items]);
-    }
+      bottlesArray(bottleId);
 
+      onSubmit([...bottles, items]);
+    }
     setQuantity('');
   };
 

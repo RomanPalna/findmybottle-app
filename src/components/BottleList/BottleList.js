@@ -1,5 +1,4 @@
 export default function BottleList({ items, onDelete }) {
-  console.log(items);
   return (
     <div>
       <p>Кількість найменувань: {items.length}</p>

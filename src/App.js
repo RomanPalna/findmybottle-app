@@ -19,16 +19,20 @@ export default function App() {
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
 
-  const addBottle = ({ id, name, liters, price, quantity }) => {
-    const bottle = {
-      id,
-      name,
-      liters,
-      price,
-      quantity,
-    };
+  const addBottle = items => {
+    // const bottle = {
+    //   id,
+    //   name,
+    //   liters,
+    //   price,
+    //   quantity,
+    // };
 
-    setItems([...items, bottle]);
+    const bottle = items.map(item => ({
+      ...item,
+    }));
+    console.log(bottle);
+    setItems([bottle]);
   };
 
   //remove

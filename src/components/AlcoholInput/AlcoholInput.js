@@ -10,10 +10,14 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
   };
 
   const bottlesArray = bottleId => {
-    setBottles(whisky.filter(item => item.id === bottleId));
+    const changedBottle = whisky
+      .filter(item => item.id === bottleId)
+      .map(item => ({
+        ...item,
+        quantity,
+      }));
+    setBottles([changedBottle, ...bottles]);
   };
-  console.log(whisky[0].id);
-  console.log(bottles);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -23,7 +27,7 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
     } else {
       bottlesArray(bottleId);
 
-      onSubmit([...bottles, items]);
+      onSubmit(bottles);
     }
     setQuantity('');
   };

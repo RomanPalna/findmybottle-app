@@ -19,20 +19,13 @@ export default function App() {
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
 
+  //add bottles to BotleList
   const addBottle = items => {
-    // const bottle = {
-    //   id,
-    //   name,
-    //   liters,
-    //   price,
-    //   quantity,
-    // };
-
     const bottle = items.map(item => ({
       ...item,
     }));
-    console.log(bottle);
-    setItems([bottle]);
+
+    setItems([...bottle, ...items]);
   };
 
   //remove
@@ -68,7 +61,7 @@ export default function App() {
     <div>
       <Dropdown />
       <Finder value={filter} onChange={findBottle} />
-      <Alcohol items={showBottle()} onSubmit={addBottle} />
+      <Alcohol items={showBottle()} addBottle={addBottle} />
       <AddList onSubmit={onSubmitHendler} />
       <BottleList items={items} onDelete={bottleRemove} />
     </div>

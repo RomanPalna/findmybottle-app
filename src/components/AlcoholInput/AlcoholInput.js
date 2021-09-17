@@ -16,19 +16,19 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
         ...item,
         quantity,
       }));
-    setBottles([changedBottle, ...bottles]);
+
+    setBottles(changedBottle);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (quantity < 1) {
-      return;
-    } else {
-      bottlesArray(bottleId);
+    // if (quantity < 1) {
+    //   return;
+    // }
+    bottlesArray(bottleId);
+    onSubmit(bottles);
 
-      onSubmit(bottles);
-    }
     setQuantity('');
   };
 

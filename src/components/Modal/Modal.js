@@ -19,9 +19,13 @@ export default class Modal extends Component {
     }
   };
 
+  hanleBackdropClick = e => {
+    if (e.target === e.currentTarget) this.props.onClose();
+  };
+
   render() {
     return createPortal(
-      <div className="Modal__backdrop">
+      <div className="Modal__backdrop" onClick={this.hanleBackdropClick}>
         <div className="Modal__content">{this.props.children}</div>
       </div>,
       modalRoot,

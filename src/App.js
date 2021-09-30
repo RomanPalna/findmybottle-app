@@ -66,21 +66,22 @@ export default function App() {
   return (
     <div>
       <button type="button" onClick={onToggleModal}>
-        Открыть модалку
+        Add Bottle
       </button>
       {toggleModal && (
         <Modal onClose={onToggleModal}>
-          <div>
+          <>
+            <AddList onSubmit={onSubmitHendler} />
             <button type="button" onClick={onToggleModal}>
               Закрыть
             </button>
-          </div>
+          </>
         </Modal>
       )}
       <Dropdown />
       <Finder value={filter} onChange={findBottle} />
       <Alcohol items={showBottle()} addBottle={addBottle} />
-      <AddList onSubmit={onSubmitHendler} />
+
       <BottleList items={items} onDelete={bottleRemove} />
     </div>
   );

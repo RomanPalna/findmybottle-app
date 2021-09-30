@@ -69,7 +69,7 @@ export default function App() {
         Открыть модалку
       </button>
       {toggleModal && (
-        <Modal>
+        <Modal onClose={onToggleModal}>
           <div>
             <button type="button" onClick={onToggleModal}>
               Закрыть

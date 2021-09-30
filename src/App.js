@@ -7,6 +7,7 @@ import Dropdown from './components/Dropdown';
 import AddList from './components/AddList';
 import BottleList from './components/BottleList';
 import whisky from './whisky.json';
+import Modal from './components/Modal/Modal';
 
 // const findMyBottle = (bottles, bottle) => {
 //   bottles.find(
@@ -18,6 +19,7 @@ export default function App() {
   const [bottles, setBottles] = useState(whisky);
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
+  const [toggleModal, setToggleModal] = useState(false);
 
   //add bottles to BotleList
   const addBottle = items => {
@@ -57,8 +59,24 @@ export default function App() {
     setBottles([...bottles, bottle]);
   };
 
+  const onToggleModal = () => {
+    setToggleModal(!toggleModal);
+  };
+
   return (
     <div>
+      <button type="button" onClick={onToggleModal}>
+        Открыть модалку
+      </button>
+      {toggleModal && (
+        <Modal>
+          <div>
+            <button type="button" onClick={onToggleModal}>
+              Закрыть
+            </button>
+          </div>
+        </Modal>
+      )}
       <Dropdown />
       <Finder value={filter} onChange={findBottle} />
       <Alcohol items={showBottle()} addBottle={addBottle} />

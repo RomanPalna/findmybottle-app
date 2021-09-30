@@ -23,9 +23,7 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    // if (quantity < 1) {
-    //   return;
-    // }
+    
     bottlesArray(bottleId);
     onSubmit(bottles);
 

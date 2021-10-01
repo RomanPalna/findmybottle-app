@@ -8,6 +8,8 @@ import AddList from './components/AddList';
 import BottleList from './components/BottleList';
 import whisky from './whisky.json';
 import Modal from './components/Modal/Modal';
+import IconButton from './components/IconButton/IconButton';
+import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
 //   bottles.find(
@@ -65,9 +67,12 @@ export default function App() {
 
   return (
     <div>
-      <button type="button" onClick={onToggleModal}>
+      <IconButton onClick={onToggleModal}>
+        <AddIcon width="40" heigth="40" fill="red" />
+      </IconButton>
+      {/* <button type="button" onClick={onToggleModal}>
         Add Bottle
-      </button>
+      </button> */}
       {toggleModal && (
         <Modal onClose={onToggleModal}>
           <>

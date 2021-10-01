@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Dropdown extends Component {
-  state = {
-    visible: false,
+const Dropdown = () => {
+  const [visible, setVisible] = useState(false);
+
+  const toggle = () => {
+    setVisible(!visible);
   };
 
-  toggle = () => {
-    this.setState(prevState => ({ visible: !prevState.visible }));
-  };
+  return (
+    <div>
+      <button type="button" onClick={toggle}>
+        {visible ? 'Hide' : 'Show'}
+      </button>
 
-  render() {
-    return (
-      <div>
-        <button type="button" onClick={this.toggle}>
-          {this.state.visible ? 'Hide' : 'Show'}
-        </button>
-
-        {this.state.visible && <div>Dropdown menu</div>}
-      </div>
-    );
-  }
-}
+      {visible && <div>Dropdown menu</div>}
+    </div>
+  );
+};
 
 export default Dropdown;

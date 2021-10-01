@@ -59,6 +59,7 @@ export default function App() {
       price,
     };
     setBottles([...bottles, bottle]);
+    onToggleModal();
   };
 
   const onToggleModal = () => {

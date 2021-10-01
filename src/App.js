@@ -66,13 +66,11 @@ export default function App() {
   };
 
   return (
-    <div>
+    <>
       <IconButton onClick={onToggleModal}>
-        <AddIcon width="40" heigth="40" fill="red" />
+        <AddIcon width="40" heigth="40" fill="white" />
       </IconButton>
-      {/* <button type="button" onClick={onToggleModal}>
-        Add Bottle
-      </button> */}
+
       {toggleModal && (
         <Modal onClose={onToggleModal}>
           <>
@@ -88,6 +86,6 @@ export default function App() {
       <Alcohol items={showBottle()} addBottle={addBottle} />
 
       <BottleList items={items} onDelete={bottleRemove} />
-    </div>
+    </>
   );
 }

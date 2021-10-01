@@ -1,6 +1,13 @@
+import './iconButton.css';
+
 const IconButton = ({ children, onClick, ...allyProps }) => {
   return (
-    <button type="button" onClick={onClick} {...allyProps}>
+    <button
+      className="IconButton"
+      type="button"
+      onClick={onClick}
+      {...allyProps}
+    >
       {children}
     </button>
   );

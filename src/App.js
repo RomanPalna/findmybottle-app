@@ -9,6 +9,7 @@ import BottleList from './components/BottleList';
 import whisky from './whisky.json';
 import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
+import Clock from './components/Clock';
 import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
@@ -82,7 +83,9 @@ export default function App() {
           </>
         </Modal>
       )}
-      <Dropdown />
+      <Dropdown>
+        <Clock />
+      </Dropdown>
       <Finder value={filter} onChange={findBottle} />
       <Alcohol items={showBottle()} addBottle={addBottle} />
 

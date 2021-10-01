@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown = () => {
+const Dropdown = ({ children }) => {
   const [visible, setVisible] = useState(false);
 
   const toggle = () => {
@@ -13,7 +13,7 @@ const Dropdown = () => {
         {visible ? 'Hide' : 'Show'}
       </button>
 
-      {visible && <div>Dropdown menu</div>}
+      {visible && <div>{children}</div>}
     </div>
   );
 };

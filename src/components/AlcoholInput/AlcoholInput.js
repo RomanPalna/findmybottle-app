@@ -23,11 +23,11 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    
     bottlesArray(bottleId);
     onSubmit(bottles);
 
     setQuantity('');
+    console.log(bottles);
   };
 
   return (

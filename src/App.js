@@ -24,9 +24,9 @@ export default function App() {
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
 
-  //add bottles to BotleList
-  const addBottle = items => {
-    const bottle = items.map(item => ({
+  //add bottles to BottleList
+  const addBottle = bottleItems => {
+    const bottle = bottleItems.map(item => ({
       ...item,
     }));
 
@@ -73,23 +73,24 @@ export default function App() {
         <AddIcon width="40" heigth="40" fill="white" />
       </IconButton>
 
+      <Dropdown>
+        <Clock />
+      </Dropdown>
+
+      <Finder value={filter} onChange={findBottle} />
+
+      <Alcohol items={showBottle()} addBottle={addBottle} />
+
+      <BottleList items={items} onDelete={bottleRemove} />
+
       {toggleModal && (
         <Modal onClose={onToggleModal}>
           <>
             <AddList onSubmit={onSubmitHendler} />
-            <button type="button" onClick={onToggleModal}>
-              Закрыть
-            </button>
+            <IconButton onClick={onToggleModal}>Close</IconButton>
           </>
         </Modal>
       )}
-      <Dropdown>
-        <Clock />
-      </Dropdown>
-      <Finder value={filter} onChange={findBottle} />
-      <Alcohol items={showBottle()} addBottle={addBottle} />
-
-      <BottleList items={items} onDelete={bottleRemove} />
     </>
   );
 }

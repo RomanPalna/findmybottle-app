@@ -8,7 +8,7 @@ const Clock = () => {
 
   useEffect(() => {
     clearInterval();
-  }, []);
+  });
 
   return <div className="Clock__face">{time}</div>;
 };

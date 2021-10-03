@@ -17,17 +17,18 @@ export default function AlcoholInput({ items, onSubmit, bottleId }) {
         quantity,
       }));
 
-    setBottles(changedBottle);
+    setBottles([...bottles, changedBottle]);
   };
+
+  console.log(bottles);
 
   const handleSubmit = e => {
     e.preventDefault();
 
     bottlesArray(bottleId);
-    onSubmit(bottles);
+    // onSubmit(bottles);
 
     setQuantity('');
-    console.log(bottles);
   };
 
   return (

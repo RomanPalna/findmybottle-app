@@ -24,17 +24,9 @@ export default function App() {
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
 
-  // add bottles to BottleList
-  const addBottle = bottleItems => {
-    const bottle = bottleItems.map(item => ({
-      ...item,
-    }));
-
-    setItems([...bottle, ...items]);
-  };
-
   useEffect(() => {
     setItems(JSON.parse(window.localStorage.getItem('bottles')));
+    console.log('UseEffect');
   }, []);
 
   //remove
@@ -85,7 +77,7 @@ export default function App() {
 
       <Alcohol items={showBottle()} />
 
-      {/* <BottleList items={items} onDelete={bottleRemove} /> */}
+      <BottleList items={items} onDelete={bottleRemove} />
 
       {toggleModal && (
         <Modal onClose={onToggleModal}>

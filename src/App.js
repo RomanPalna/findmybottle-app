@@ -23,11 +23,25 @@ export default function App() {
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
+  const [listBottle, setListBottle] = useState([]);
+
+  //additing bottles to BottleList
+  const addBottle = (quantity, bottleId) => {
+    const changedBottle = whisky.find(item => item.id === bottleId);
+
+    changedBottle.quantity = quantity;
+
+    setListBottle([changedBottle, ...listBottle]);
+  };
+
+  useEffect(() => {
+    window.localStorage.setItem('bottles', JSON.stringify(listBottle));
+  }, [listBottle]);
 
   useEffect(() => {
     setItems(JSON.parse(window.localStorage.getItem('bottles')));
     console.log('UseEffect');
-  }, []);
+  }, [listBottle]);
 
   //remove
   const bottleRemove = bottleId => {
@@ -48,12 +62,13 @@ export default function App() {
     );
   };
 
-  const onSubmitHendler = (bottleName, litr, price) => {
+  const onSubmitHendler = (bottleName, litr, price, quantity = 0) => {
     const bottle = {
       id: shortid.generate(),
       name: bottleName,
       liters: litr,
       price,
+      quantity,
     };
     setBottles([...bottles, bottle]);
     onToggleModal();
@@ -75,7 +90,7 @@ export default function App() {
 
       <Finder value={filter} onChange={findBottle} />
 
-      <Alcohol items={showBottle()} />
+      <Alcohol items={showBottle()} addBottle={addBottle} />
 
       <BottleList items={items} onDelete={bottleRemove} />
 

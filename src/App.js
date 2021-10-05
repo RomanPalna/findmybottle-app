@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import shortid from 'shortid';
 
 import Alcohol from './components/Alcohol';
@@ -24,7 +24,7 @@ export default function App() {
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
 
-  //add bottles to BottleList
+  // add bottles to BottleList
   const addBottle = bottleItems => {
     const bottle = bottleItems.map(item => ({
       ...item,
@@ -32,6 +32,10 @@ export default function App() {
 
     setItems([...bottle, ...items]);
   };
+
+  useEffect(() => {
+    setItems(JSON.parse(window.localStorage.getItem('bottles')));
+  }, []);
 
   //remove
   const bottleRemove = bottleId => {
@@ -79,9 +83,9 @@ export default function App() {
 
       <Finder value={filter} onChange={findBottle} />
 
-      <Alcohol items={showBottle()} addBottle={addBottle} />
+      <Alcohol items={showBottle()} />
 
-      <BottleList items={items} onDelete={bottleRemove} />
+      {/* <BottleList items={items} onDelete={bottleRemove} /> */}
 
       {toggleModal && (
         <Modal onClose={onToggleModal}>

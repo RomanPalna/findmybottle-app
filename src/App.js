@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import shortid from 'shortid';
+import './App.css';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
@@ -44,7 +45,6 @@ export default function App() {
 
   useEffect(() => {
     setItems(JSON.parse(window.localStorage.getItem('bottles')));
-    console.log('UseEffect');
   }, [listBottle]);
 
   //remove
@@ -83,9 +83,9 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className="container">
       <Navigation />
-      <hl />
+      <hr />
       <IconButton onClick={onToggleModal}>
         <AddIcon width="40" heigth="40" fill="white" />
       </IconButton>
@@ -108,6 +108,6 @@ export default function App() {
           </>
         </Modal>
       )}
-    </>
+    </div>
   );
 }

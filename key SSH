@@ -5,3 +5,8 @@ QyNTUxOQAAACDpCzHgBDdJ+awG8tJl/zUlsOYXgf/RZoY3/QDm6M+uMQAAAJjwShXk8EoV
 AAAED8UniCkhh14XjlgXjszdx6q/gHvTxFWJ2RtJIDJCeHYOkLMeAEN0n5rAby0mX/NSWw
 5heB/9Fmhjf9AOboz64xAAAAFHJvbWEucGFsbmFAZ21haWwuY29tAQ==
 -----END OPENSSH PRIVATE KEY-----
+
+
+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
+
+git remote set-url origin https://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@github.com/palnaroman/findmybottle-app.git

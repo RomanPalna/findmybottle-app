@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import IconButton from '../IconButton';
+import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
 
 export default function AlcoholInput({ onSubmit, bottleId }) {
   const [quantity, setQuantity] = useState('');
@@ -24,7 +26,9 @@ export default function AlcoholInput({ onSubmit, bottleId }) {
           onChange={handleChangeBottles}
           className="Alcohol__input"
         ></input>
-        <button type="submit">Add to list</button>
+        <IconButton type="submit">
+          <AddIcon width="24" heigth="24" fill="white" />
+        </IconButton>
       </label>
     </form>
   );

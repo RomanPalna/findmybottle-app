@@ -1,0 +1,8 @@
+.bottlelist {
+  width: 800px;
+}
+
+.bottlelist__item {
+  display: flex;
+  justify-content: space-between;
+}

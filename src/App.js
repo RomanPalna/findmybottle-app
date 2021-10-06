@@ -27,6 +27,9 @@ export default function App() {
 
   //additing bottles to BottleList
   const addBottle = (quantity, bottleId) => {
+    if (quantity <= 0) {
+      return alert('Введите количество!');
+    }
     const changedBottle = whisky.find(item => item.id === bottleId);
 
     changedBottle.quantity = quantity;

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import shortid from 'shortid';
 import './App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
@@ -30,7 +32,7 @@ export default function App() {
   //additing bottles to BottleList
   const addBottle = (quantity, bottleId) => {
     if (quantity <= 0) {
-      return alert('Введите количество!');
+      return toast.error('🦄 Введіть кількість!!!');
     }
     const changedBottle = whisky.find(item => item.id === bottleId);
 
@@ -108,6 +110,18 @@ export default function App() {
           </>
         </Modal>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <ToastContainer />
     </div>
   );
 }

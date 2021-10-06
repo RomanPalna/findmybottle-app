@@ -10,6 +10,7 @@ import whisky from './whisky.json';
 import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
+import Navigation from './components/Navigation';
 import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
@@ -83,6 +84,8 @@ export default function App() {
 
   return (
     <>
+      <Navigation />
+      <hl />
       <IconButton onClick={onToggleModal}>
         <AddIcon width="40" heigth="40" fill="white" />
       </IconButton>

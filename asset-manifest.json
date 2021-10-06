@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/findmybottle-app/static/css/main.9d37ecc9.chunk.css",
+    "main.js": "/findmybottle-app/static/js/main.5fad34bc.chunk.js",
+    "main.js.map": "/findmybottle-app/static/js/main.5fad34bc.chunk.js.map",
+    "runtime-main.js": "/findmybottle-app/static/js/runtime-main.6cd65b5e.js",
+    "runtime-main.js.map": "/findmybottle-app/static/js/runtime-main.6cd65b5e.js.map",
+    "static/css/2.679831fc.chunk.css": "/findmybottle-app/static/css/2.679831fc.chunk.css",
+    "static/js/2.6ef2801d.chunk.js": "/findmybottle-app/static/js/2.6ef2801d.chunk.js",
+    "static/js/2.6ef2801d.chunk.js.map": "/findmybottle-app/static/js/2.6ef2801d.chunk.js.map",
+    "index.html": "/findmybottle-app/index.html",
+    "static/css/2.679831fc.chunk.css.map": "/findmybottle-app/static/css/2.679831fc.chunk.css.map",
+    "static/css/main.9d37ecc9.chunk.css.map": "/findmybottle-app/static/css/main.9d37ecc9.chunk.css.map",
+    "static/js/2.6ef2801d.chunk.js.LICENSE.txt": "/findmybottle-app/static/js/2.6ef2801d.chunk.js.LICENSE.txt",
+    "static/media/addIcon.6aa4f85b.svg": "/findmybottle-app/static/media/addIcon.6aa4f85b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cd65b5e.js",
+    "static/css/2.679831fc.chunk.css",
+    "static/js/2.6ef2801d.chunk.js",
+    "static/css/main.9d37ecc9.chunk.css",
+    "static/js/main.5fad34bc.chunk.js"
+  ]
+}

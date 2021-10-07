@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom/';
 import shortid from 'shortid';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,6 +15,7 @@ import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
 import Navigation from './components/Navigation';
+import PageNotFound from './components/PageNotFound';
 import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
@@ -38,7 +40,7 @@ export default function App() {
 
     changedBottle.quantity = quantity;
 
-    setListBottle([changedBottle, ...listBottle]);
+    return setListBottle([changedBottle, ...listBottle]);
   };
 
   useEffect(() => {
@@ -88,19 +90,34 @@ export default function App() {
     <div className="container">
       <Navigation />
       <hr />
-      <IconButton onClick={onToggleModal}>
-        <AddIcon width="40" heigth="40" fill="white" />
-      </IconButton>
 
-      <Dropdown>
-        <Clock />
-      </Dropdown>
+      <Switch>
+        <Route path="/" exact>
+          <Clock />
+        </Route>
 
-      <Finder value={filter} onChange={findBottle} />
+        <Route path="/price">
+          <IconButton onClick={onToggleModal}>
+            <AddIcon width="40" heigth="40" fill="white" />
+          </IconButton>
 
-      <Alcohol items={showBottle()} addBottle={addBottle} />
+          <Dropdown>
+            <Clock />
+          </Dropdown>
 
-      <BottleList items={items} onDelete={bottleRemove} />
+          <Finder value={filter} onChange={findBottle} />
+
+          <Alcohol items={showBottle()} addBottle={addBottle} />
+        </Route>
+
+        <Route path="/order">
+          <BottleList items={items} onDelete={bottleRemove} />
+        </Route>
+
+        <Route>
+          <PageNotFound />
+        </Route>
+      </Switch>
 
       {toggleModal && (
         <Modal onClose={onToggleModal}>

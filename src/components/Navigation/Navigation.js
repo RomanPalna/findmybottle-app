@@ -4,8 +4,15 @@ import './nav.css';
 export default function Navigation() {
   return (
     <nav className="nav">
-      <NavLink to="/">Main page</NavLink>;<NavLink to="/price">Price</NavLink>;
-      <NavLink to="/order">Order</NavLink>
+      <NavLink exact to="/" className="link" activeClassName="activeLink">
+        Main page
+      </NavLink>
+      <NavLink to="/price" className="link" activeClassName="activeLink">
+        Price
+      </NavLink>
+      <NavLink to="/order" className="link" activeClassName="activeLink">
+        Order
+      </NavLink>
     </nav>
   );
 }

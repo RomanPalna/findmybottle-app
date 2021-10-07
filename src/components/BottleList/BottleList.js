@@ -1,5 +1,4 @@
 import IconButton from '../IconButton';
-import { ReactComponent as DeleteIcon } from '../../icons/deleteIcon.svg';
 import './bottleList.css';
 
 export default function BottleList({ items, onDelete }) {
@@ -14,7 +13,7 @@ export default function BottleList({ items, onDelete }) {
             <p>Price: {item.price} </p>
             <p>Quantity: {item.quantity} </p>
             <IconButton type="button" onClick={() => onDelete(item.id)}>
-              <DeleteIcon width="30" heigth="30" fill="white" />
+              Remove
             </IconButton>
           </li>
         ))}

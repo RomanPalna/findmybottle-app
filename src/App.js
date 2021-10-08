@@ -32,15 +32,25 @@ export default function App() {
   const [listBottle, setListBottle] = useState([]);
 
   //additing bottles to BottleList
+
   const addBottle = (quantity, bottleId) => {
     if (quantity <= 0) {
       return toast.error('🦄 Введіть кількість!!!');
     }
-    const changedBottle = whisky.find(item => item.id === bottleId);
 
-    changedBottle.quantity = quantity;
+    // const checkoutSort = data => data.sort(...);
 
-    return setListBottle([changedBottle, ...listBottle]);
+    const existingBottle = listBottle.find(bottle => bottle.id === bottleId);
+    if (existingBottle) {
+      existingBottle.quantity =
+        Number(quantity) + Number(existingBottle.quantity);
+      setListBottle([...listBottle].sort());
+    } else {
+      const changedBottle = whisky.find(item => item.id === bottleId);
+      changedBottle.quantity = quantity;
+
+      setListBottle([changedBottle, ...listBottle]);
+    }
   };
 
   useEffect(() => {
@@ -142,3 +152,46 @@ export default function App() {
     </div>
   );
 }
+
+// const arr = [
+//   {
+//     id: 'id-1',
+//     name: 'Jim Beam',
+//     imgUrl: 'https://s.wine.style/images_gen/240/2402/0_0_cat.jpg',
+//     liters: '1',
+//     price: '500',
+//     quantity: '3',
+//   },
+//   {
+//     id: 'id-2',
+//     name: 'Jack Daniels',
+//     imgUrl: 'https://s.wine.style/images_gen/266/2663/0_0_cat.jpg',
+//     liters: '1',
+//     price: '650',
+//     quantity: '0',
+//   },
+//   {
+//     id: 'id-1',
+//     name: 'Jim Beam',
+//     imgUrl: 'https://s.wine.style/images_gen/240/2402/0_0_cat.jpg',
+//     liters: '1',
+//     price: '500',
+//     quantity: '7',
+//   },
+// ];
+
+// const result = arr.reduce((prev, arr) => {
+//   if (prev.id === arr.id) {
+//     return {
+//       ...arr,
+//       quantity: Number(prev.quantity) + Number(arr.quantity),
+//     };
+//   }
+//   return arr;
+// });
+
+// console.log(result);
+
+// массив.reduce((previousValue, element, index, array) => {
+//   // Тело коллбек-функции
+// }, initialValue);

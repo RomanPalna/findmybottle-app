@@ -33,6 +33,7 @@ export default function AddList({ onSubmit }) {
       <label>
         Назва пляшки
         <input
+          autoComplete="off"
           name="name"
           type="text"
           value={bottleName}

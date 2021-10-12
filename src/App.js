@@ -38,8 +38,6 @@ export default function App() {
       return toast.error('🦄 Введіть кількість!!!');
     }
 
-    // const checkoutSort = data => data.sort(...);
-
     const existingBottle = listBottle.find(bottle => bottle.id === bottleId);
     if (existingBottle) {
       existingBottle.quantity =
@@ -49,7 +47,7 @@ export default function App() {
       const changedBottle = whisky.find(item => item.id === bottleId);
       changedBottle.quantity = quantity;
 
-      setListBottle([changedBottle, ...listBottle]);
+      setListBottle([changedBottle, ...listBottle].sort());
     }
   };
 
@@ -152,46 +150,3 @@ export default function App() {
     </div>
   );
 }
-
-// const arr = [
-//   {
-//     id: 'id-1',
-//     name: 'Jim Beam',
-//     imgUrl: 'https://s.wine.style/images_gen/240/2402/0_0_cat.jpg',
-//     liters: '1',
-//     price: '500',
-//     quantity: '3',
-//   },
-//   {
-//     id: 'id-2',
-//     name: 'Jack Daniels',
-//     imgUrl: 'https://s.wine.style/images_gen/266/2663/0_0_cat.jpg',
-//     liters: '1',
-//     price: '650',
-//     quantity: '0',
-//   },
-//   {
-//     id: 'id-1',
-//     name: 'Jim Beam',
-//     imgUrl: 'https://s.wine.style/images_gen/240/2402/0_0_cat.jpg',
-//     liters: '1',
-//     price: '500',
-//     quantity: '7',
-//   },
-// ];
-
-// const result = arr.reduce((prev, arr) => {
-//   if (prev.id === arr.id) {
-//     return {
-//       ...arr,
-//       quantity: Number(prev.quantity) + Number(arr.quantity),
-//     };
-//   }
-//   return arr;
-// });
-
-// console.log(result);
-
-// массив.reduce((previousValue, element, index, array) => {
-//   // Тело коллбек-функции
-// }, initialValue);

@@ -8,14 +8,12 @@ export default function BottleList({ items, onDelete }) {
   const sumQuantity = items.reduce((prev, { quantity }) => {
     return Number(prev) + Number(quantity);
   }, 0);
-
-  console.log(sumPrice, sumQuantity);
-
   const sum = sumPrice * sumQuantity;
 
   return (
     <div>
       <p>Кількість найменувань: {items.length}</p>
+      <p>Кількість пляшок: {sumQuantity}</p>
       <p>Загальна сума: {sum} грн</p>
       <ul className="bottlelist">
         {items.map(item => (

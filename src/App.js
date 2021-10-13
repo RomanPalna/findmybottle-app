@@ -4,6 +4,7 @@ import shortid from 'shortid';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import apiService from './api-service/api-service';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
@@ -24,12 +25,17 @@ import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 //   );
 // };
 
+import axios from 'axios';
+
+const BASE_URL = 'http://localhost:4040/alcohol';
+
 export default function App() {
   const [bottles, setBottles] = useState(whisky);
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
+  const [some, setSome] = useState(null);
 
   //additing bottles to BottleList
 
@@ -50,6 +56,11 @@ export default function App() {
       setListBottle([changedBottle, ...listBottle].sort());
     }
   };
+
+  useEffect(() => {
+    apiService.then(setSome);
+  }, []);
+  console.log(some);
 
   useEffect(() => {
     window.localStorage.setItem('bottles', JSON.stringify(listBottle));

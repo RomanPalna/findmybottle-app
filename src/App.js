@@ -4,7 +4,7 @@ import shortid from 'shortid';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import apiService from './api-service/api-service';
+import * as serviceAPI from './api-service/api-service';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
@@ -25,17 +25,13 @@ import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 //   );
 // };
 
-import axios from 'axios';
-
-const BASE_URL = 'http://localhost:4040/alcohol';
-
 export default function App() {
-  const [bottles, setBottles] = useState(whisky);
+  const [bottleState, setBottleState] = useState([]);
+  const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
   const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
-  const [some, setSome] = useState(null);
 
   //additing bottles to BottleList
 
@@ -58,9 +54,9 @@ export default function App() {
   };
 
   useEffect(() => {
-    apiService.then(setSome);
-  }, []);
-  console.log(some);
+    serviceAPI.apiService().then(bottles => setBottleState(bottles));
+    setBottles(bottleState);
+  }, [bottleState]);
 
   useEffect(() => {
     window.localStorage.setItem('bottles', JSON.stringify(listBottle));
@@ -84,9 +80,11 @@ export default function App() {
   const showBottle = () => {
     const normalizeName = filter.toLowerCase();
 
-    return bottles.filter(bottle =>
-      bottle.name.toLowerCase().includes(normalizeName),
-    );
+    return bottles
+      ? bottles.filter(bottle =>
+          bottle.name.toLowerCase().includes(normalizeName),
+        )
+      : console.log('Loading');
   };
 
   const onSubmitHendler = (bottleName, litr, price, quantity = 0) => {
@@ -146,17 +144,7 @@ export default function App() {
           </>
         </Modal>
       )}
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer autoClose={3000} />
       <ToastContainer />
     </div>
   );

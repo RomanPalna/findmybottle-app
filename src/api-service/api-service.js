@@ -9,4 +9,11 @@ async function apiService() {
     : Promise.reject(new Error('Not Found'));
 }
 
-export { apiService };
+async function apiServisePost(bottle) {
+  await axios({
+    method: 'post',
+    baseURL: BASE_URL,
+    data: bottle,
+  });
+}
+export { apiService, apiServisePost };

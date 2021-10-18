@@ -11,7 +11,7 @@ import Finder from './components/Finder/Finder';
 import Dropdown from './components/Dropdown';
 import AddList from './components/AddList';
 import BottleList from './components/BottleList';
-import whisky from './whisky.json';
+// import whisky from './whisky.json';
 import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
@@ -46,7 +46,7 @@ export default function App() {
         Number(quantity) + Number(existingBottle.quantity);
       setListBottle([...listBottle].sort());
     } else {
-      const changedBottle = whisky.find(item => item.id === bottleId);
+      const changedBottle = bottles.find(item => item.id === bottleId);
       changedBottle.quantity = quantity;
 
       setListBottle([changedBottle, ...listBottle].sort());
@@ -54,7 +54,11 @@ export default function App() {
   };
 
   useEffect(() => {
+    console.log('Render UseEffect');
     serviceAPI.apiService().then(bottles => setBottleState(bottles));
+  }, []);
+
+  useEffect(() => {
     setBottles(bottleState);
   }, [bottleState]);
 
@@ -95,7 +99,8 @@ export default function App() {
       price,
       quantity,
     };
-    setBottles([...bottles, bottle]);
+    serviceAPI.apiServisePost(bottle);
+
     onToggleModal();
   };
 

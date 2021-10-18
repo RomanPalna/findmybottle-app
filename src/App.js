@@ -54,13 +54,12 @@ export default function App() {
   };
 
   useEffect(() => {
-    console.log('Render UseEffect');
     serviceAPI.apiService().then(bottles => setBottleState(bottles));
   }, []);
 
   useEffect(() => {
     setBottles(bottleState);
-  }, [bottleState]);
+  }, [bottleState, bottles]);
 
   useEffect(() => {
     window.localStorage.setItem('bottles', JSON.stringify(listBottle));

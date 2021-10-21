@@ -29,11 +29,10 @@ export default function App() {
   const [bottleState, setBottleState] = useState([]);
   const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
-  const [items, setItems] = useState([]);
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
 
-  //additing bottles to BottleList
+  //adding bottles to BottleList
 
   const addBottle = (quantity, bottleId) => {
     if (quantity <= 0) {
@@ -55,23 +54,18 @@ export default function App() {
 
   useEffect(() => {
     serviceAPI.apiService().then(bottles => setBottleState(bottles));
+    console.log('UseEffect');
   }, []);
 
   useEffect(() => {
     setBottles(bottleState);
   }, [bottleState, bottles]);
 
-  useEffect(() => {
-    window.localStorage.setItem('bottles', JSON.stringify(listBottle));
-  }, [listBottle]);
-
-  useEffect(() => {
-    setItems(JSON.parse(window.localStorage.getItem('bottles')));
-  }, [listBottle]);
+  console.log('listbottle', listBottle);
 
   //remove
   const bottleRemove = bottleId => {
-    setItems(items.filter(item => item.id !== bottleId));
+    setListBottle(listBottle.filter(item => item.id !== bottleId));
   };
 
   //For Finder, filter
@@ -132,7 +126,7 @@ export default function App() {
         </Route>
 
         <Route path="/order">
-          <BottleList items={items} onDelete={bottleRemove} />
+          <BottleList items={listBottle} onDelete={bottleRemove} />
         </Route>
 
         <Route>

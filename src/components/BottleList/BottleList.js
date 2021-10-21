@@ -15,6 +15,7 @@ export default function BottleList({ items, onDelete }) {
       <p>Кількість найменувань: {items.length}</p>
       <p>Кількість пляшок: {sumQuantity}</p>
       <p>Загальна сума: {sum} грн</p>
+
       <ul className="bottlelist">
         {items.map(item => (
           <li key={item.id} className="bottlelist__item">

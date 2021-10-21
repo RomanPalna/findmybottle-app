@@ -26,7 +26,6 @@ import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 // };
 
 export default function App() {
-  const [bottleState, setBottleState] = useState([]);
   const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
   const [toggleModal, setToggleModal] = useState(false);
@@ -53,15 +52,9 @@ export default function App() {
   };
 
   useEffect(() => {
-    serviceAPI.apiService().then(bottles => setBottleState(bottles));
+    serviceAPI.apiService().then(bottles => setBottles(bottles));
     console.log('UseEffect');
   }, []);
-
-  useEffect(() => {
-    setBottles(bottleState);
-  }, [bottleState, bottles]);
-
-  console.log('listbottle', listBottle);
 
   //remove
   const bottleRemove = bottleId => {

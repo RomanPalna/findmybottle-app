@@ -44,6 +44,13 @@
       "liters": "50",
       "price": "1200",
       "quantity": 0
+    },
+    {
+      "id": "KFUMZEhU7",
+      "name": "Anaconda",
+      "liters": "4",
+      "price": "1200",
+      "quantity": 0
     }
   ]
 }

@@ -1,14 +1,6 @@
 {
   "alcohol": [
     {
-      "id": "id-3",
-      "name": "Wild Turkey",
-      "imgUrl": "https://s.wine.style/images_gen/232/23236/0_0_cat.jpg",
-      "liters": 0.7,
-      "price": 650,
-      "quantity": 0
-    },
-    {
       "id": "2JyNynsdQ",
       "name": "Jameson",
       "liters": "3",
@@ -20,6 +12,20 @@
       "name": "Glenfiddich",
       "liters": "0.7",
       "price": "1200",
+      "quantity": 0
+    },
+    {
+      "id": "3nHkuYd8O",
+      "name": "WIld Turkey",
+      "liters": "0.7",
+      "price": "650",
+      "quantity": 0
+    },
+    {
+      "id": "DXPKmWaY_",
+      "name": "Vodka Absolut",
+      "liters": "0.7",
+      "price": "250",
       "quantity": 0
     }
   ]

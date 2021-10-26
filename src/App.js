@@ -51,14 +51,20 @@ export default function App() {
     }
   };
 
+  //fetch
   useEffect(() => {
     serviceAPI.apiService().then(bottles => setBottles(bottles));
     console.log('UseEffect');
   }, []);
 
-  //remove
+  //remove from BottleList
   const bottleRemove = bottleId => {
     setListBottle(listBottle.filter(item => item.id !== bottleId));
+  };
+
+  //remove from Alcohol
+  const removeBottle = id => {
+    serviceAPI.apiServiceDelete(id);
   };
 
   //For Finder, filter
@@ -115,7 +121,11 @@ export default function App() {
 
           <Finder value={filter} onChange={findBottle} />
 
-          <Alcohol items={showBottle()} addBottle={addBottle} />
+          <Alcohol
+            items={showBottle()}
+            addBottle={addBottle}
+            deleteBottle={removeBottle}
+          />
         </Route>
 
         <Route path="/order">

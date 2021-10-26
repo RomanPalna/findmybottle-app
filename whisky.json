@@ -1,14 +1,6 @@
 {
   "alcohol": [
     {
-      "id": "id-1",
-      "name": "Jim Beam",
-      "imgUrl": "https://s.wine.style/images_gen/240/2402/0_0_cat.jpg",
-      "liters": 1,
-      "price": 500,
-      "quantity": 0
-    },
-    {
       "id": "id-2",
       "name": "Jack Daniels",
       "imgUrl": "https://s.wine.style/images_gen/266/2663/0_0_cat.jpg",
@@ -29,27 +21,6 @@
       "name": "Jameson",
       "liters": "3",
       "price": "4500",
-      "quantity": 0
-    },
-    {
-      "id": "i0Z32NUJZ",
-      "name": "Kostya",
-      "liters": "12",
-      "price": "2000",
-      "quantity": 0
-    },
-    {
-      "id": "9nwWjHdhC",
-      "name": "Andrey",
-      "liters": "50",
-      "price": "1200",
-      "quantity": 0
-    },
-    {
-      "id": "KFUMZEhU7",
-      "name": "Anaconda",
-      "liters": "4",
-      "price": "1200",
       "quantity": 0
     }
   ]

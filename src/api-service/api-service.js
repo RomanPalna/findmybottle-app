@@ -14,7 +14,11 @@ async function apiServisePost(bottle) {
     method: 'post',
     baseURL: BASE_URL,
     data: bottle,
-  });
+  }).catch(new Error('Post Error'));
 }
 
-export { apiService, apiServisePost };
+async function apiServiceDelete(id) {
+  await axios.delete(`${BASE_URL}/${id}`).catch(new Error('Delete Error'));
+}
+
+export { apiService, apiServisePost, apiServiceDelete };

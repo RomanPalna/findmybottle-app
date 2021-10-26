@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 
 const Dropdown = ({ children }) => {
   const [visible, setVisible] = useState(false);
@@ -9,9 +10,9 @@ const Dropdown = ({ children }) => {
 
   return (
     <div>
-      <button type="button" onClick={toggle}>
+      <Button type="button" onClick={toggle} color="success">
         {visible ? 'Hide' : 'Show'}
-      </button>
+      </Button>
 
       {visible && <div>{children}</div>}
     </div>

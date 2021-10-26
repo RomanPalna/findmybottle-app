@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
+import './addList.css';
 
 export default function AddList({ onSubmit }) {
   const [bottleName, setBottleName] = useState('');

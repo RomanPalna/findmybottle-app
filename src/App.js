@@ -16,6 +16,7 @@ import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
 import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
+import Container from './components/Container';
 import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
@@ -109,16 +110,17 @@ export default function App() {
         </Route>
 
         <Route path="/price">
-          <IconButton onClick={onToggleModal}>
-            <AddIcon width="40" heigth="40" fill="white" />
-          </IconButton>
+          <Container>
+            <IconButton onClick={onToggleModal}>
+              <AddIcon width="40" heigth="40" fill="white" />
+            </IconButton>
 
-          <Dropdown>
-            <Clock />
-          </Dropdown>
+            <Dropdown>
+              <Clock />
+            </Dropdown>
 
-          <Finder value={filter} onChange={findBottle} />
-
+            <Finder value={filter} onChange={findBottle} />
+          </Container>
           <Alcohol
             items={showBottle()}
             addBottle={addBottle}

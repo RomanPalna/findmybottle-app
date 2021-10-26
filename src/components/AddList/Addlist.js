@@ -29,8 +29,8 @@ export default function AddList({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={nandleSubmit}>
-      <label>
+    <form className="form" onSubmit={nandleSubmit}>
+      <label className="form-label">
         Назва пляшки
         <input
           autoComplete="off"
@@ -41,7 +41,7 @@ export default function AddList({ onSubmit }) {
         ></input>
       </label>
 
-      <label>
+      <label className="form-label">
         litres
         <input
           name="litres"
@@ -51,7 +51,7 @@ export default function AddList({ onSubmit }) {
         ></input>
       </label>
 
-      <label>
+      <label className="form-label">
         Price
         <input
           name="price"

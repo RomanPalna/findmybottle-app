@@ -11,7 +11,6 @@ import Finder from './components/Finder/Finder';
 import Dropdown from './components/Dropdown';
 import AddList from './components/AddList';
 import BottleList from './components/BottleList';
-// import whisky from './whisky.json';
 import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
@@ -32,7 +31,6 @@ export default function App() {
   const [listBottle, setListBottle] = useState([]);
 
   //adding bottles to BottleList
-
   const addBottle = (quantity, bottleId) => {
     if (quantity <= 0) {
       return toast.error('🦄 Введіть кількість!!!');

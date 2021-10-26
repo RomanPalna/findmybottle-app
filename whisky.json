@@ -22,6 +22,13 @@
       "liters": "3",
       "price": "4500",
       "quantity": 0
+    },
+    {
+      "id": "_-yWahklZ",
+      "name": "Glenfiddich",
+      "liters": "0.7",
+      "price": "1200",
+      "quantity": 0
     }
   ]
 }

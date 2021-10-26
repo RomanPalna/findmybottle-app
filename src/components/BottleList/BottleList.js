@@ -1,4 +1,5 @@
-import IconButton from '../IconButton';
+// import IconButton from '../IconButton';
+import Button from '@mui/material/Button';
 import './bottleList.css';
 
 export default function BottleList({ items, onDelete }) {
@@ -23,9 +24,14 @@ export default function BottleList({ items, onDelete }) {
             <p>Litres: {item.liters} </p>
             <p>Price: {item.price} </p>
             <p>Quantity: {item.quantity} </p>
-            <IconButton type="button" onClick={() => onDelete(item.id)}>
+            <Button
+              variant="contained"
+              color="error"
+              type="button"
+              onClick={() => onDelete(item.id)}
+            >
               Remove
-            </IconButton>
+            </Button>
           </li>
         ))}
       </ul>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
 export default function AddList({ onSubmit }) {
   const [bottleName, setBottleName] = useState('');
@@ -31,36 +32,41 @@ export default function AddList({ onSubmit }) {
   return (
     <form className="form" onSubmit={nandleSubmit}>
       <label className="form-label">
-        Назва пляшки
-        <input
+        <TextField
           autoComplete="off"
+          label="Назва пляшки"
+          required={true}
           name="name"
           type="text"
           value={bottleName}
           onChange={handleChangeBottleName}
-        ></input>
+        ></TextField>
       </label>
 
       <label className="form-label">
-        litres
-        <input
+        <TextField
           name="litres"
+          label="Літри"
+          required={true}
           type="number"
           value={litr}
           onChange={handleChangeLitres}
-        ></input>
+        ></TextField>
       </label>
 
       <label className="form-label">
-        Price
-        <input
+        <TextField
           name="price"
+          label="Ціна"
+          required={true}
           type="number"
           value={price}
           onChange={handleChangePrice}
-        ></input>
+        ></TextField>
       </label>
-      <button type="submit">Submit</button>
+      <Button variant="contained" color="primary" type="submit">
+        Submit
+      </Button>
     </form>
   );
 }

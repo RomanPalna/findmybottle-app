@@ -22,7 +22,7 @@ export default function AddList({ onSubmit }) {
     setPrice(value);
   };
 
-  const nandleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     onSubmit(bottleName, litr, price);
     setBottleName('');
@@ -31,7 +31,7 @@ export default function AddList({ onSubmit }) {
   };
 
   return (
-    <form className="form" onSubmit={nandleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <label className="form-label">
         <TextField
           autoComplete="off"

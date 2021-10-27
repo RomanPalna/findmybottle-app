@@ -6,6 +6,7 @@ import Modal from '../Modal';
 import Button from '@mui/material/Button';
 import AddCustomer from '../AddCustomer';
 import './bottleList.css';
+import { toast } from 'react-toastify';
 
 export default function BottleList({ items, onDelete, percente }) {
   const [toggleModal, setToggleModal] = useState(false);
@@ -33,6 +34,7 @@ export default function BottleList({ items, onDelete, percente }) {
     };
     setCustomer(addCustomer);
     onToggleModal();
+    toast.success('Замовник доданий!');
   };
 
   return (
@@ -66,17 +68,17 @@ export default function BottleList({ items, onDelete, percente }) {
       )}
 
       <ul className="bottlelist">
-        {items.map(item => (
-          <li key={item.id} className="bottlelist__item">
-            <p>{item.name}</p>
-            <p> {item.liters} л. </p>
-            <p> {item.price} грн. </p>
-            <p> {item.quantity} бут.</p>
+        {items.map(({ id, name, liters, price, quantity }) => (
+          <li key={id} className="bottlelist__item">
+            <p>{name}</p>
+            <p> {liters} л. </p>
+            <p> {(price / 100) * percente + price} грн. </p>
+            <p> {quantity} бут.</p>
             <Button
               variant="contained"
               color="error"
               type="button"
-              onClick={() => onDelete(item.id)}
+              onClick={() => onDelete(id)}
             >
               <HighlightOffOutlinedIcon />
             </Button>

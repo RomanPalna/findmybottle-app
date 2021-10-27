@@ -45,11 +45,13 @@ export default function App({ percente }) {
       existingBottle.quantity =
         Number(quantity) + Number(existingBottle.quantity);
       setListBottle([...listBottle].sort());
+      toast.success('Кількість оновлено!');
     } else {
       const changedBottle = bottles.find(item => item.id === bottleId);
       changedBottle.quantity = quantity;
 
       setListBottle([changedBottle, ...listBottle].sort());
+      toast.success('Додано до замовлення!');
     }
   };
 
@@ -119,7 +121,6 @@ export default function App({ percente }) {
         <Route path="/price">
           <Container>
             <IconButton onClick={onToggleModal}>
-              {/* <AddIcon width="40" heigth="40" fill="white" /> */}
               <AddCircleOutlineOutlinedIcon fontSize="large" color="white" />
             </IconButton>
 

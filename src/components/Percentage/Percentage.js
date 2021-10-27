@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
+import { toast } from 'react-toastify';
 
 export default function Percentage({ onSubmit }) {
   const [percente, setPercente] = useState(0);
@@ -13,6 +14,7 @@ export default function Percentage({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit(percente);
+    toast.success(`Націнка встановлена на рівні ${percente} відсотків`);
   };
 
   return (

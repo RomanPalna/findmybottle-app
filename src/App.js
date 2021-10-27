@@ -17,7 +17,9 @@ import Clock from './components/Clock';
 import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
 import Container from './components/Container';
-import { ReactComponent as AddIcon } from './icons/addIcon.svg';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import Percentage from './components/Percentage';
+// import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
 // const findMyBottle = (bottles, bottle) => {
 //   bottles.find(
@@ -25,11 +27,12 @@ import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 //   );
 // };
 
-export default function App() {
+export default function App({ percente }) {
   const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
+  const [percentage, setPercentage] = useState(0);
 
   //adding bottles to BottleList
   const addBottle = (quantity, bottleId) => {
@@ -95,6 +98,10 @@ export default function App() {
     onToggleModal();
   };
 
+  const onSubmitPercente = percente => {
+    setPercentage(percente);
+  };
+
   const onToggleModal = () => {
     setToggleModal(!toggleModal);
   };
@@ -112,11 +119,12 @@ export default function App() {
         <Route path="/price">
           <Container>
             <IconButton onClick={onToggleModal}>
-              <AddIcon width="40" heigth="40" fill="white" />
+              {/* <AddIcon width="40" heigth="40" fill="white" /> */}
+              <AddCircleOutlineOutlinedIcon fontSize="large" color="white" />
             </IconButton>
 
             <Dropdown>
-              <Clock />
+              <Percentage onSubmit={onSubmitPercente} />
             </Dropdown>
 
             <Finder value={filter} onChange={findBottle} />
@@ -125,11 +133,16 @@ export default function App() {
             items={showBottle()}
             addBottle={addBottle}
             deleteBottle={removeBottle}
+            percente={percentage}
           />
         </Route>
 
         <Route path="/order">
-          <BottleList items={listBottle} onDelete={bottleRemove} />
+          <BottleList
+            items={listBottle}
+            onDelete={bottleRemove}
+            percente={percentage}
+          />
         </Route>
 
         <Route>

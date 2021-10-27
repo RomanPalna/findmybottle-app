@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import IconButton from '../IconButton';
 import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import Modal from '../Modal';
 import Button from '@mui/material/Button';
 import AddCustomer from '../AddCustomer';
 import './bottleList.css';
 
-export default function BottleList({ items, onDelete }) {
+export default function BottleList({ items, onDelete, percente }) {
   const [toggleModal, setToggleModal] = useState(false);
   const [customer, setCustomer] = useState({});
 
   const sumPrice = items.reduce((prev, { price }) => {
-    return Number(prev) + Number(price);
+    const sum = Number(prev) + Number(price);
+    return (sum / 100) * percente + sum;
   }, 0);
   const sumQuantity = items.reduce((prev, { quantity }) => {
     return Number(prev) + Number(quantity);
@@ -32,7 +34,6 @@ export default function BottleList({ items, onDelete }) {
     setCustomer(addCustomer);
     onToggleModal();
   };
-  console.log();
 
   return (
     <div>
@@ -46,7 +47,7 @@ export default function BottleList({ items, onDelete }) {
           <li>Номер стола: {customer.table || 'Введіть стіл'} </li>
           <li>Кількість найменувань: {items.length}</li>
           <li>Кількість пляшок: {sumQuantity}</li>
-          <li>Загальна сума: {sum} грн</li>
+          <li>Загальна сума: {Math.round(sum)} грн</li>
         </ul>
         <div className="bottleList__add">
           <p>Додати замовника</p>
@@ -77,7 +78,7 @@ export default function BottleList({ items, onDelete }) {
               type="button"
               onClick={() => onDelete(item.id)}
             >
-              Remove
+              <HighlightOffOutlinedIcon />
             </Button>
           </li>
         ))}

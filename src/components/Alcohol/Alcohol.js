@@ -1,9 +1,10 @@
 import AlcoholInput from '../AlcoholInput';
 import Button from '@mui/material/Button';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 
 import './Alcohol.css';
 
-export default function Alcohol({ items, addBottle, deleteBottle }) {
+export default function Alcohol({ items, addBottle, deleteBottle, percente }) {
   return (
     <ul className="Alcohol__list">
       {items.map(({ id, name, liters, price }) => (
@@ -14,11 +15,13 @@ export default function Alcohol({ items, addBottle, deleteBottle }) {
             type="button"
             onClick={() => deleteBottle(id)}
           >
-            DELETE
+            <HighlightOffOutlinedIcon />
           </Button>
-          <p className="Alcohol__discription">{name}</p>
+
+          <p>{name}</p>
           <p>{liters} л.</p>
-          <p>{price} грн.</p>
+          <p>{Math.round((price / 100) * percente + price)} грн.</p>
+
           <AlcoholInput onSubmit={addBottle} bottleId={id} />
         </li>
       ))}

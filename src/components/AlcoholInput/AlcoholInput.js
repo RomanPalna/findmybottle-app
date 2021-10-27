@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import IconButton from '../IconButton';
+import { TextField } from '@mui/material';
 import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
 
 export default function AlcoholInput({ onSubmit, bottleId }) {
@@ -18,14 +19,13 @@ export default function AlcoholInput({ onSubmit, bottleId }) {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Кількість:
-        <input
+        <TextField
           name="number"
           type="number"
           value={quantity}
           onChange={handleChangeBottles}
           className="Alcohol__input"
-        ></input>
+        ></TextField>
         <IconButton type="submit">
           <AddIcon width="24" heigth="24" fill="white" />
         </IconButton>

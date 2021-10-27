@@ -1,15 +1,11 @@
 .Alcohol__list {
-  width: 700px;
+  width: auto;
 }
 
 .Alcohol__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.Alcohol__discription {
-  margin-right: 5px;
 }
 
 .Alcohol__input {

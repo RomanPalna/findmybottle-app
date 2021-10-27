@@ -34,6 +34,13 @@
       "liters": "0.5",
       "price": "112",
       "quantity": 0
+    },
+    {
+      "id": "xjQDryc_Z",
+      "name": "Rum Angostura",
+      "liters": "1",
+      "price": "417",
+      "quantity": 0
     }
   ]
 }

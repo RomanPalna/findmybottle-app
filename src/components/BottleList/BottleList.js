@@ -67,10 +67,10 @@ export default function BottleList({ items, onDelete }) {
       <ul className="bottlelist">
         {items.map(item => (
           <li key={item.id} className="bottlelist__item">
-            <p>Name: {item.name}</p>
-            <p>Litres: {item.liters} </p>
-            <p>Price: {item.price} </p>
-            <p>Quantity: {item.quantity} </p>
+            <p>{item.name}</p>
+            <p> {item.liters} л. </p>
+            <p> {item.price} грн. </p>
+            <p> {item.quantity} бут.</p>
             <Button
               variant="contained"
               color="error"

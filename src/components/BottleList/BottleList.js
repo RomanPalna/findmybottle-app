@@ -30,6 +30,7 @@ export default function BottleList({ items, onDelete }) {
       table,
     };
     setCustomer(addCustomer);
+    onToggleModal();
   };
   console.log();
 
@@ -38,7 +39,7 @@ export default function BottleList({ items, onDelete }) {
       <div className="bottleList__head">
         <ul>
           <li>
-            Замовник: {customer.name || 'Введіть ім`я та фамілію'}
+            Замовник: {customer.name || 'Введіть ім`я та фамілію'}{' '}
             {customer.surname}
           </li>
           <li>Дата: {customer.date || 'Введіть дату'} </li>

@@ -6,3 +6,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+.bottleList__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottleList__add {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}

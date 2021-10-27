@@ -27,6 +27,13 @@
       "liters": "0.7",
       "price": "250",
       "quantity": 0
+    },
+    {
+      "id": "OcmBZumfR",
+      "name": "Vodka Lvivska",
+      "liters": "0.5",
+      "price": "112",
+      "quantity": 0
     }
   ]
 }

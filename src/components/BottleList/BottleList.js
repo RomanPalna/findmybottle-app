@@ -1,8 +1,15 @@
-// import IconButton from '../IconButton';
+import { useState } from 'react';
+import IconButton from '../IconButton';
+import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
+import Modal from '../Modal';
 import Button from '@mui/material/Button';
+import AddCustomer from '../AddCustomer';
 import './bottleList.css';
 
 export default function BottleList({ items, onDelete }) {
+  const [toggleModal, setToggleModal] = useState(false);
+  const [customer, setCustomer] = useState({});
+
   const sumPrice = items.reduce((prev, { price }) => {
     return Number(prev) + Number(price);
   }, 0);
@@ -11,11 +18,50 @@ export default function BottleList({ items, onDelete }) {
   }, 0);
   const sum = sumPrice * sumQuantity;
 
+  const onToggleModal = () => {
+    setToggleModal(!toggleModal);
+  };
+
+  const onSubmitHendler = (name, surname, date, table) => {
+    const addCustomer = {
+      name,
+      surname,
+      date,
+      table,
+    };
+    setCustomer(addCustomer);
+  };
+  console.log();
+
   return (
     <div>
-      <p>Кількість найменувань: {items.length}</p>
-      <p>Кількість пляшок: {sumQuantity}</p>
-      <p>Загальна сума: {sum} грн</p>
+      <div className="bottleList__head">
+        <ul>
+          <li>
+            Замовник: {customer.name || 'Введіть ім`я та фамілію'}
+            {customer.surname}
+          </li>
+          <li>Дата: {customer.date || 'Введіть дату'} </li>
+          <li>Номер стола: {customer.table || 'Введіть стіл'} </li>
+          <li>Кількість найменувань: {items.length}</li>
+          <li>Кількість пляшок: {sumQuantity}</li>
+          <li>Загальна сума: {sum} грн</li>
+        </ul>
+        <div className="bottleList__add">
+          <p>Додати замовника</p>
+          <IconButton onClick={onToggleModal}>
+            <AddIcon width="40" heigth="40" fill="white" />
+          </IconButton>
+        </div>
+      </div>
+      {toggleModal && (
+        <Modal onClose={onToggleModal}>
+          <>
+            <AddCustomer onSubmit={onSubmitHendler} />
+            <IconButton onClick={onToggleModal}>Close</IconButton>
+          </>
+        </Modal>
+      )}
 
       <ul className="bottlelist">
         {items.map(item => (

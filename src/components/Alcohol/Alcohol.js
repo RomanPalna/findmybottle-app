@@ -17,8 +17,8 @@ export default function Alcohol({ items, addBottle, deleteBottle }) {
             DELETE
           </Button>
           <p className="Alcohol__discription">{name}</p>
-          <p>Litres: {liters}</p>
-          <p>Price: {price}</p>
+          <p>{liters} л.</p>
+          <p>{price} грн.</p>
           <AlcoholInput onSubmit={addBottle} bottleId={id} />
         </li>
       ))}

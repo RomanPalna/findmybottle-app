@@ -19,15 +19,8 @@ import PageNotFound from './components/PageNotFound';
 import Container from './components/Container';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import Percentage from './components/Percentage';
-// import { ReactComponent as AddIcon } from './icons/addIcon.svg';
 
-// const findMyBottle = (bottles, bottle) => {
-//   bottles.find(
-//     item => item.bottleName.toLowerCase() === bottle.bottleName.toLowerCase(),
-//   );
-// };
-
-export default function App({ percente }) {
+export default function App() {
   const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
   const [toggleModal, setToggleModal] = useState(false);
@@ -58,7 +51,6 @@ export default function App({ percente }) {
   //fetch
   useEffect(() => {
     serviceAPI.apiService().then(bottles => setBottles(bottles));
-    console.log('UseEffect');
   }, []);
 
   //remove from BottleList
@@ -130,6 +122,7 @@ export default function App({ percente }) {
 
             <Finder value={filter} onChange={findBottle} />
           </Container>
+
           <Alcohol
             items={showBottle()}
             addBottle={addBottle}

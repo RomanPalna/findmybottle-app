@@ -12,3 +12,11 @@
   width: 50px;
   margin-right: 8px;
 }
+
+.alcohol__text {
+  margin-right: auto;
+}
+
+.alcohol__price {
+  margin-left: 50px;
+}

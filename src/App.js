@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom/';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import * as serviceAPI from './api-service/api-service';
+// import * as serviceAPI from './api-service/api-service';
 
 import Alcohol from './components/Alcohol';
 import Finder from './components/Finder/Finder';
 import Dropdown from './components/Dropdown';
-import AddList from './components/AddList';
+// import AddList from './components/AddList';
 import BottleList from './components/BottleList';
-import Modal from './components/Modal/Modal';
+// import Modal from './components/Modal/Modal';
 import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
 import Navigation from './components/Navigation';
@@ -19,9 +19,10 @@ import PageNotFound from './components/PageNotFound';
 import Container from './components/Container';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import Percentage from './components/Percentage';
+import alcoholList from './alcohol.json';
 
 export default function App() {
-  const [bottles, setBottles] = useState([]);
+  const [bottles, setBottles] = useState(alcoholList);
   const [filter, setFilter] = useState('');
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
@@ -48,20 +49,20 @@ export default function App() {
     }
   };
 
-  //fetch
-  useEffect(() => {
-    serviceAPI.apiService().then(bottles => setBottles(bottles));
-  }, []);
+  //fetch! uncomment, when using fetch
+  // useEffect(() => {
+  //   serviceAPI.apiService().then(bottles => setBottles(bottles));
+  // }, []);
 
   //remove from BottleList
   const bottleRemove = bottleId => {
     setListBottle(listBottle.filter(item => item.id !== bottleId));
   };
 
-  //remove from Alcohol
-  const removeBottle = id => {
-    serviceAPI.apiServiceDelete(id);
-  };
+  //remove from Alcohol! uncomment, when using fetch
+  // const removeBottle = id => {
+  //   serviceAPI.apiServiceDelete(id);
+  // };
 
   //For Finder, filter
   const findBottle = e => {
@@ -79,18 +80,19 @@ export default function App() {
       : console.log('Loading');
   };
 
-  const onSubmitHendler = (bottleName, litr, price, quantity = 0) => {
-    const bottle = {
-      id: shortid.generate(),
-      name: bottleName,
-      liters: litr,
-      price,
-      quantity,
-    };
-    serviceAPI.apiServisePost(bottle);
+  // uncomment, when using fetch
+  // const onSubmitHendler = (bottleName, litr, price, quantity = 0) => {
+  //   const bottle = {
+  //     id: shortid.generate(),
+  //     name: bottleName,
+  //     liters: litr,
+  //     price,
+  //     quantity,
+  //   };
+  //   serviceAPI.apiServisePost(bottle);
 
-    onToggleModal();
-  };
+  //   onToggleModal();
+  // };
 
   const onSubmitPercente = percente => {
     setPercentage(percente);
@@ -104,7 +106,6 @@ export default function App() {
     <div className="container">
       <Navigation />
       <hr />
-
       <Switch>
         <Route path="/" exact>
           <Clock />
@@ -126,7 +127,7 @@ export default function App() {
           <Alcohol
             items={showBottle()}
             addBottle={addBottle}
-            deleteBottle={removeBottle}
+            // deleteBottle={removeBottle}
             percente={percentage}
           />
         </Route>
@@ -144,14 +145,16 @@ export default function App() {
         </Route>
       </Switch>
 
-      {toggleModal && (
+      {/* uncomment, when using fetch */}
+      {/* {toggleModal && (
         <Modal onClose={onToggleModal}>
           <>
             <AddList onSubmit={onSubmitHendler} />
             <IconButton onClick={onToggleModal}>Close</IconButton>
           </>
         </Modal>
-      )}
+      )} */}
+
       <ToastContainer autoClose={3000} />
       <ToastContainer />
     </div>

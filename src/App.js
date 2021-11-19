@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom/';
 // import shortid from 'shortid';
 import './App.css';
@@ -22,7 +22,7 @@ import Percentage from './components/Percentage';
 import alcoholList from './alcohol.json';
 
 export default function App() {
-  const [bottles, setBottles] = useState(alcoholList);
+  const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
   const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
@@ -48,6 +48,10 @@ export default function App() {
       toast.success('Додано до замовлення!');
     }
   };
+
+  useEffect(() => {
+    setBottles(alcoholList);
+  }, []);
 
   //fetch! uncomment, when using fetch
   // useEffect(() => {

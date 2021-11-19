@@ -14,3 +14,8 @@ git remote set-url origin https://2Nzf3jXS/TGVZeL+F0dm2JQ0vAqdQNKwzRNfgaP15g4@gi
 9069614
 
 SHA256:2Nzf3jXS/TGVZeL+F0dm2JQ0vAqdQNKwzRNfgaP15g4 roma.palna@gmail.com
+
+
+
+
+git remote set-url origin https://romanpalna:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICG3P1vXPJRsIcAwXSllYvIn6L/IFPTeup9xhaGUnJ6j@github.com/findmybottle-app.git

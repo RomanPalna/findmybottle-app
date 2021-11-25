@@ -12,14 +12,22 @@ export default function BottleList({ items, onDelete, percente }) {
   const [toggleModal, setToggleModal] = useState(false);
   const [customer, setCustomer] = useState({});
 
-  const sumPrice = items.reduce((prev, { price }) => {
-    const sum = Number(prev) + Number(price);
-    return (sum / 100) * percente + sum;
-  }, 0);
+  // const sumPrice = items.reduce((prev, { price }) => {
+  //   const sum = Number(prev) + Number(price);
+
+  //   const extraCharge = (sum / 100) * percente + sum;
+  //   console.log(extraCharge);
+  //   return extraCharge;
+  // }, 0);
+
+  const sumTotal = arr =>
+    items.reduce((sum, { price, quantity }) => sum + price * quantity, 0);
+
+  const total = sumTotal(items);
+
   const sumQuantity = items.reduce((prev, { quantity }) => {
     return Number(prev) + Number(quantity);
   }, 0);
-  const sum = sumPrice * sumQuantity;
 
   const onToggleModal = () => {
     setToggleModal(!toggleModal);
@@ -49,8 +57,11 @@ export default function BottleList({ items, onDelete, percente }) {
           <li>Номер стола: {customer.table || 'Введіть стіл'} </li>
           <li>Кількість найменувань: {items.length}</li>
           <li>Кількість пляшок: {sumQuantity}</li>
-          <li>Загальна сума: {Math.round(sum)} грн</li>
+          <li>
+            Загальна сума: {Math.round((total / 100) * percente + total)} грн
+          </li>
         </ul>
+
         <div className="bottleList__add">
           <p>Додати замовника</p>
           <IconButton onClick={onToggleModal}>
@@ -58,6 +69,7 @@ export default function BottleList({ items, onDelete, percente }) {
           </IconButton>
         </div>
       </div>
+
       {toggleModal && (
         <Modal onClose={onToggleModal}>
           <>
@@ -74,7 +86,7 @@ export default function BottleList({ items, onDelete, percente }) {
             <p className="bottlelist__litres"> {liters} л. </p>
             <p className="bottlelist__price">
               {' '}
-              {(price / 100) * percente + price} грн.{' '}
+              {Math.round((price / 100) * percente + price)} грн.{' '}
             </p>
             <p className="bottlelist__quantity"> {quantity} бут.</p>
             <Button

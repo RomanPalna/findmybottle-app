@@ -159,8 +159,7 @@ export default function App() {
         </Modal>
       )} */}
 
-      <ToastContainer autoClose={3000} />
-      <ToastContainer />
+      <ToastContainer autoClose={1200} />
     </div>
   );
 }

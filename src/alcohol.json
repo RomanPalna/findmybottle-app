@@ -261,126 +261,126 @@
   {
     "id": "id-39",
     "name": "Moet Chandon «Brut Imperial»",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 1716,
     "quantity": 0
   },
   {
     "id": "id-40",
     "name": "Mumm, \"Cordon Rouge\" AOC ",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 1181,
     "quantity": 0
   },
   {
     "id": "id-41",
     "name": "Lancelot Pienne Cuvee de la table ronde",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 1655.64,
     "quantity": 0
   },
   {
     "id": "id-42",
     "name": "Mumm, Brut Rose AOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 1167,
     "quantity": 0
   },
   {
     "id": "id-43",
     "name": "Rocca Rossa Pietra Miliare Spumante DOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 159.9,
     "quantity": 0
   },
   {
     "id": "id-44",
     "name": "Gran Soleto Prosecco DOC Spumante Extra Dry",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 159,
     "quantity": 0
   },
   {
     "id": "id-45",
     "name": "Mas De Fer Rive Di Soligo Valdobbiadene Prosecco Superiore DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 454.74,
     "quantity": 0
   },
   {
     "id": "id-46",
     "name": "Asti \"Filipetti\"  DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 264.6,
     "quantity": 0
   },
   {
     "id": "id-47",
     "name": "Cava Masia de la Luz DO",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 202.8,
     "quantity": 0
   },
   {
     "id": "id-48",
     "name": "CAVA Masia de la Luz Rose DO",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 202.8,
     "quantity": 0
   },
   {
     "id": "id-49",
     "name": "Cavicchioli Lambrusco Bianco dell'Emilia IGT Dolce",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 127.2,
     "quantity": 0
   },
   {
     "id": "id-50",
     "name": "Pinot Grigio DOC, Monte del Fra",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 261,
     "quantity": 0
   },
   {
     "id": "id-51",
     "name": "Monte Del Fra Custoza DOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 331,
     "quantity": 0
   },
   {
     "id": "id-52",
     "name": "Roberto Sarotto, \"Aurora\", Gavi DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 351.96,
     "quantity": 0
   },
   {
     "id": "id-53",
     "name": "Tenute Cali, Graffetta Grillo Sicilia DOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 326.94,
     "quantity": 0
   },
   {
     "id": "id-54",
     "name": "Botter, \"Tor del Colle\" Pecorino, Terre di Chieti IGT",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 169.81,
     "quantity": 0
   },
   {
     "id": "id-55",
     "name": "Rene Mure, Gewurztraminer Orchidees Sauvages AOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 410.1,
     "quantity": 0
   },
   {
     "id": "id-56",
     "name": "Domaine des Malandes, Chablis AOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 544.56,
     "quantity": 0
   },
@@ -394,232 +394,239 @@
   {
     "id": "id-58",
     "name": "Domaine du Bois Perron, Muscadet Sevre & Maine Sur Lie AOP",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 236.4,
     "quantity": 0
   },
   {
     "id": "id-59",
     "name": "Chevalier de France, Blanc Moelleux",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 99.96,
     "quantity": 0
   },
   {
     "id": "id-60",
     "name": "Dr. Heidemanns-Bergweiler Riesling",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 213,
     "quantity": 0
   },
   {
     "id": "id-61",
     "name": "Estancia Mendoza, Chardonnay",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 177.06,
     "quantity": 0
   },
   {
     "id": "id-62",
     "name": "Konrad Sauvignon Blanc «Hole in the Water»",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 264.6,
     "quantity": 0
   },
   {
     "id": "id-63",
     "name": "Namaqua, Chenin Blanc ",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 129.42,
     "quantity": 0
   },
   {
     "id": "id-64",
     "name": "Villa Tinta, Sukholimanskiy",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 94,
     "quantity": 0
   },
   {
     "id": "id-65",
     "name": "Henry Le Cuvier Rose D'Anjou AOP",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 209.82,
     "quantity": 0
   },
   {
     "id": "id-66",
     "name": "Bardolino Chiaretto, DOC Monte Del Fra",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 262.56,
     "quantity": 0
   },
   {
     "id": "id-67",
     "name": "Monte del Fra, Bardolino DOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 259.98,
     "quantity": 0
   },
   {
     "id": "id-68",
     "name": "Tor D.Colle Biferno Riserva DOC ",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 194.38,
     "quantity": 0
   },
   {
     "id": "id-69",
     "name": "Monte del Fra, Valpolicella Classico Superiore Ripasso",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 481.2,
     "quantity": 0
   },
   {
     "id": "id-70",
     "name": "Roberto Sarotto, Barbera d'Asti Superiore DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 351.96,
     "quantity": 0
   },
   {
     "id": "id-71",
     "name": "Roberto Sarotto, Barolo DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 777.48,
     "quantity": 0
   },
   {
     "id": "id-72",
     "name": "Villa Puccini, Chianti Classico Riserva DOCG",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 392.28,
     "quantity": 0
   },
   {
     "id": "id-73",
     "name": "Cantina Tollo, \"Colle Cavalieri\" Montepulciano d'Abruzzo DOP ",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 326.94,
     "quantity": 0
   },
   {
     "id": "id-74",
     "name": "Graffetta Nero, d'Avola Sicilia DOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 315.3,
     "quantity": 0
   },
   {
     "id": "id-75",
     "name": "Chateau Moulin de Mallet, Bordeaux AOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 254.52,
     "quantity": 0
   },
   {
     "id": "id-76",
     "name": "Sichel, Bordeaux Rouge AOC",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 328.44,
     "quantity": 0
   },
   {
     "id": "id-77",
     "name": " Chateau Pontet Barrail, Medoc Cru Bourgeois",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 586.86,
     "quantity": 0
   },
   {
     "id": "id-78",
     "name": "Chevalier de France Rouge Moelleux",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 99.96,
     "quantity": 0
   },
   {
     "id": "id-79",
     "name": "Dr. Heidemanns-Bergweiler, Dornfelder",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 213,
     "quantity": 0
   },
   {
     "id": "id-80",
     "name": " Rioja Muga Reserva DO",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 779.76,
     "quantity": 0
   },
   {
     "id": "id-81",
     "name": "Marques de Penamonte Coleccion Privada DO",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 552.6,
     "quantity": 0
   },
   {
     "id": "id-82",
     "name": "Woodhaven Red Zinfandel California",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 231,
     "quantity": 0
   },
   {
     "id": "id-83",
     "name": "Gonzalez Byass, Veramonte Carmenere",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 266.76,
     "quantity": 0
   },
   {
     "id": "id-84",
     "name": "Estancia Mendoza Bonarda",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 177.06,
     "quantity": 0
   },
   {
     "id": "id-85",
     "name": "Estancia Mendoza Malbec Reserva",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 245.94,
     "quantity": 0
   },
   {
     "id": "id-86",
     "name": "Namaqua Pinotage ",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 141.9,
     "quantity": 0
   },
   {
     "id": "id-87",
     "name": "Villa Tinta, Cabernet",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 94,
     "quantity": 0
   },
   {
     "id": "id-88",
     "name": "Villa Tinta, Odessa Black",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 94,
     "quantity": 0
   },
   {
     "id": "id-89",
     "name": "Dow's Fine Ruby Port",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 311.95,
     "quantity": 0
   },
   {
     "id": "id-90",
     "name": "Emilio Lustau Pedro Ximenez San Emilio Sherry",
-    "liters": 0.0,
+    "liters": 0.75,
     "price": 651.95,
+    "quantity": 0
+  },
+  {
+    "id": "id-91",
+    "name": "Горілка Хортиця Преміум",
+    "liters": 0.5,
+    "price": 100,
     "quantity": 0
   }
 ]

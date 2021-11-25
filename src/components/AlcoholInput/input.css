@@ -1,4 +1,6 @@
-/* .TextField {
-  width: 10px;
-  margin-right: 8px;
-} */
+.alcohol__input {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

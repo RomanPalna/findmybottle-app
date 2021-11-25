@@ -19,7 +19,7 @@ export default function Alcohol({ items, addBottle, deleteBottle, percente }) {
           </Button> */}
 
           <p className="alcohol__text">{name}</p>
-          <p>{liters} л.</p>
+          <p className="alcohol__litres">{liters} л.</p>
           <p className="alcohol__price">
             {Math.round((price / 100) * percente + price)} грн.
           </p>

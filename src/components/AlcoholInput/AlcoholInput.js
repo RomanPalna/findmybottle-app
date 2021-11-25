@@ -19,13 +19,16 @@ export default function AlcoholInput({ onSubmit, bottleId }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className="alcohol__input">
         <TextField
           name="number"
           type="number"
           value={quantity}
           onChange={handleChangeBottles}
-          className="alcohol__input"
+          style={{
+            width: 40,
+            height: 50,
+          }}
         ></TextField>
         <IconButton type="submit">
           <AddIcon width="24" heigth="24" fill="white" />

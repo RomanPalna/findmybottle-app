@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import { toast } from 'react-toastify';
+import './percentage.css';
 
 export default function Percentage({ onSubmit }) {
   const [percente, setPercente] = useState(0);
@@ -20,7 +21,7 @@ export default function Percentage({ onSubmit }) {
   return (
     <>
       <p>Поточна націнка становить: {percente} %</p>
-      <form onSubmit={handleSubmit}>
+      <form className="percentage" onSubmit={handleSubmit}>
         <TextField
           autoComplete="off"
           name="percente"

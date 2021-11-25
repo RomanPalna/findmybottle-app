@@ -12,19 +12,19 @@ import Dropdown from './components/Dropdown';
 // import AddList from './components/AddList';
 import BottleList from './components/BottleList';
 // import Modal from './components/Modal/Modal';
-import IconButton from './components/IconButton/IconButton';
+// import IconButton from './components/IconButton/IconButton';
 import Clock from './components/Clock';
 import Navigation from './components/Navigation';
 import PageNotFound from './components/PageNotFound';
 import Container from './components/Container';
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+// import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import Percentage from './components/Percentage';
 import alcoholList from './alcohol.json';
 
 export default function App() {
   const [bottles, setBottles] = useState([]);
   const [filter, setFilter] = useState('');
-  const [toggleModal, setToggleModal] = useState(false);
+  // const [toggleModal, setToggleModal] = useState(false);
   const [listBottle, setListBottle] = useState([]);
   const [percentage, setPercentage] = useState(0);
 
@@ -102,9 +102,9 @@ export default function App() {
     setPercentage(percente);
   };
 
-  const onToggleModal = () => {
-    setToggleModal(!toggleModal);
-  };
+  // const onToggleModal = () => {
+  //   setToggleModal(!toggleModal);
+  // };
 
   return (
     <div className="container">
@@ -117,9 +117,9 @@ export default function App() {
 
         <Route path="/price">
           <Container>
-            <IconButton onClick={onToggleModal}>
+            {/* <IconButton onClick={onToggleModal}>
               <AddCircleOutlineOutlinedIcon fontSize="large" color="white" />
-            </IconButton>
+            </IconButton> */}
 
             <Dropdown>
               <Percentage onSubmit={onSubmitPercente} />

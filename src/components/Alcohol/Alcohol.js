@@ -6,9 +6,9 @@ import './Alcohol.css';
 
 export default function Alcohol({ items, addBottle, deleteBottle, percente }) {
   return (
-    <ul className="Alcohol__list">
+    <ul className="alcohol__list">
       {items.map(({ id, name, liters, price }) => (
-        <li key={id} className="Alcohol__item">
+        <li key={id} className="alcohol__item">
           {/* <Button
             color="error"
             variant="contained"

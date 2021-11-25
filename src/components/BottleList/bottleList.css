@@ -1,16 +1,35 @@
 .bottlelist {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .bottlelist__item {
   display: flex;
   justify-content: space-between;
+  padding: 6px 0;
 }
 
 .bottleList__head {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.bottlelist__name {
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.bottlelist__litres {
+  margin-right: 30px;
+}
+
+.bottlelist__price {
+  margin-right: 30px;
+}
+
+.bottlelist__quantity {
+  margin-right: 30px;
 }
 
 .bottleList__add {

@@ -1,22 +1,24 @@
-.Alcohol__list {
+.alcohol__list {
   width: auto;
 }
 
-.Alcohol__item {
+.alcohol__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.Alcohol__input {
-  width: 50px;
-  margin-right: 8px;
+  padding: 6px 0;
 }
 
 .alcohol__text {
   margin-right: auto;
+  font-weight: bold;
 }
 
 .alcohol__price {
-  margin-left: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.IconButton {
+  margin-left: 30px;
 }

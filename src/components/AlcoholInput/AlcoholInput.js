@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IconButton from '../IconButton';
 import { TextField } from '@mui/material';
 import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
+import './input.css';
 
 export default function AlcoholInput({ onSubmit, bottleId }) {
   const [quantity, setQuantity] = useState('');
@@ -24,7 +25,7 @@ export default function AlcoholInput({ onSubmit, bottleId }) {
           type="number"
           value={quantity}
           onChange={handleChangeBottles}
-          className="Alcohol__input"
+          className="alcohol__input"
         ></TextField>
         <IconButton type="submit">
           <AddIcon width="24" heigth="24" fill="white" />

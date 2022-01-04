@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import './percentage.css';
 
 export default function Percentage({ onSubmit }) {
-  const [percente, setPercente] = useState(0);
+  const [percente, setPercente] = useState(25);
 
   const handleChangePercente = e => {
     const { value } = e.currentTarget;

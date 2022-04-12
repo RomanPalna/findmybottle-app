@@ -1,15 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import 'normalize.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+  <BrowserRouter>
+    <React.StrictMode>
       <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root'),
+    </React.StrictMode>
+  </BrowserRouter>,
 );
